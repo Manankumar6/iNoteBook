@@ -14,14 +14,15 @@ const Notes = (props) => {
     const { showAlert } = props
     const navigate = useNavigate()
 
-useEffect(()=>{
-    if(localStorage.getItem('token')){
-        // eslint-disable-next-line
-        getNotes();
-    }else{
-        navigate('/login')
-    }
-},[])
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            // eslint-disable-next-line
+            getNotes();
+        } else {
+            // eslint-disable-next-line
+            navigate('/login')
+        }
+    }, [])
 
     const ref = useRef(null)
     const refClose = useRef(null)
@@ -104,14 +105,14 @@ useEffect(()=>{
             {/* Your Note-------------------------------------------------------- */}
             <div className='row my-3'>
                 <h1>Your Note</h1>
-               <div className='container mx-2'>
-                {notes.length === 0 && "No Notes to display" }
-               </div>
-             {notes.map((note)=>{
-                return (
-                    <NoteItems key={note._id} note={note} showAlert={showAlert} updateNote={updateNote} />
-                )
-             })}
+                <div className='container mx-2'>
+                    {notes.length === 0 && "No Notes to display"}
+                </div>
+                {notes.map((note) => {
+                    return (
+                        <NoteItems key={note._id} note={note} showAlert={showAlert} updateNote={updateNote} />
+                    )
+                })}
 
 
             </div>
