@@ -56,7 +56,7 @@ const NoteState = (props) => {
 
     });
     const json = await response.json();
-
+    console.log(json)
     const newNote = notes.filter((currNote) => { return currNote._id !== id })
     setNotes(newNote)
     
@@ -74,7 +74,7 @@ const NoteState = (props) => {
     });
 
     const json = await response.json();
-
+    console.log(json)
     let newNotes = JSON.parse(JSON.stringify(notes))
 
 

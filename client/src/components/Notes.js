@@ -17,11 +17,11 @@ const Notes = (props) => {
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getNotes();
-            // eslint-disable-next-line
+        
         } else {
             navigate('/login')
-            // eslint-disable-next-line
         }
+        // eslint-disable-next-line
     }, [])
 
     const ref = useRef(null)
