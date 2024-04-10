@@ -3,7 +3,8 @@ import NoteContext from "./noteContext";
 
 
 const NoteState = (props) => {
-  const host = 'http://localhost:5000'
+  const host = "https://inotebook-pfb4.onrender.com"
+  
   const noteintiial = []
   const [notes,setNotes] = useState(noteintiial)
   // Get All Notes
@@ -17,7 +18,7 @@ const NoteState = (props) => {
         }
       })
       const json = await response.json();
-      console.log(json)
+     
       setNotes(json)
     } catch (error) {
       console.error('Error fetching notes:', error);
@@ -55,10 +56,10 @@ const NoteState = (props) => {
 
     });
     const json = await response.json();
-    console.log(json)
+
     const newNote = notes.filter((currNote) => { return currNote._id !== id })
     setNotes(newNote)
-    console.log("delete note id is " + notes)
+    
   }
   // Edit Note
   const editNote = async (id, title, description, tag) => {
@@ -73,7 +74,7 @@ const NoteState = (props) => {
     });
 
     const json = await response.json();
-    console.log(json)
+
     let newNotes = JSON.parse(JSON.stringify(notes))
 
 

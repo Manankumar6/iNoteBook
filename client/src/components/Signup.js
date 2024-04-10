@@ -14,7 +14,8 @@ const Signup = (props) => {
 
     e.preventDefault();
     const { name, email, password } = signup;
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const URL = "https://inotebook-pfb4.onrender.com/"
+    const response = await fetch(`${URL}api/auth/createuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -25,7 +26,7 @@ const Signup = (props) => {
 
 
     const json = await response.json()
-    console.log( json)
+ 
     
     if(json.success){
       localStorage.setItem("token", json.authToken)

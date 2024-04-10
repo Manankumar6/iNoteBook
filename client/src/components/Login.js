@@ -11,7 +11,8 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const URL = "https://inotebook-pfb4.onrender.com/"
+    const response = await fetch(`${URL}api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -20,15 +21,15 @@ const Login = (props) => {
 
     });
     const json = await response.json()
-    console.log(json)
+
     if (json.success) {
       // save the auth token and redireact
       localStorage.setItem('token', json.authToken)
-      console.log(json.authtoken)
+   
       navigat('/')
       props.showAlert("Account Create Successfully", "success")
     } else {
-      console.log('error found')
+   
       props.showAlert("Invalid Details", "danger")
     }
   }
