@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://0.0.0.0:27017/iNoteBook").then(()=>{
+const URL = process.env.URL
+mongoose.connect(URL).then(()=>{
     console.log('Connect successfully')
 })
 .catch((err)=>{
