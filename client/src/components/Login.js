@@ -42,7 +42,7 @@ const Login = (props) => {
 
   return (
     <div>
-      <h2>Login to continue to IiNotebook</h2>
+      <h2>Login to continue to iNoteBook</h2>
       <form onSubmit={handleSubmit}>
 
         <div className="mb-3">
