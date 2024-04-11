@@ -30,7 +30,7 @@ function App() {
 
       <Navbar />
       <Alert alert={alert} />
-    <div className="container">
+    
 
     <Routes basename={process.env.PUBLIC_URL}>
     <Route exact path='/' element={<Home showAlert={showAlert} />} />
@@ -39,7 +39,7 @@ function App() {
     <Route exact path='/signup' element={<Signup showAlert={showAlert} />} />
     <Route path='*' element={<Home showAlert={showAlert} />} />
     </Routes>
-    </div>
+  
 
   </NoteState>
     </>

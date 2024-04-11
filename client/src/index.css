@@ -1,3 +1,107 @@
-i{
+* {
+    margin: 0;
+    padding: 0;
+}
+
+i {
     cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    border-radius: 50%;
+
+}
+
+.nav-menu:hover {
+    background-color: #dde0e7 !important;
+}
+
+.li-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #feefc3;
+    width: 50px;
+    height: 50px;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 50%;
+}
+
+.nav-item-icon {
+
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 5px;
+
+}
+
+.nav-item-icon:hover {
+    background-color: #feefc3;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 22%;
+    height: 20%;
+    
+
+}
+
+.li-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1rem;
+    
+    padding: 2px;
+
+    margin-top: 5px;
+
+
+}
+
+ul>li {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+   
+}
+span{
+ 
+    font-size: 1rem;
+    padding-left: 2rem;
+}
+ul>li:hover {
+    background-color: #feefc3;
+    cursor: pointer;
+    border-top-right-radius: 50rem !important;
+    border-bottom-right-radius: 50rem !important;
+
+  
+}
+.input_holder{
+    width: 50%;
+    box-shadow: 0 0 5px gray;
+    
+}
+.container > .form-control::-webkit-input-placeholder {
+    font-weight: bold;
+}
+.container > .form-control:focus{
+    outline: none ;
+    border: none ;
+}
+@media only screen and (max-width: 580px){
+    .input_holder{
+        width: 100%;
+    }
 }

@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Loading from './Loading'
 
 
 const Login = (props) => {
   const navigat = useNavigate()
+  const [loading,setLoading] = useState(false)
   const [login, setLogin] = useState({
     email: "",
     password: ""
   })
 
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
     const URL = "https://inotebook-pfb4.onrender.com/"
     const response = await fetch(`${URL}api/auth/login`, {
@@ -23,6 +26,7 @@ const Login = (props) => {
     const json = await response.json()
 
     if (json.success) {
+      setLoading(false)
       // save the auth token and redireact
       localStorage.setItem('token', json.authToken)
    
@@ -42,8 +46,12 @@ const Login = (props) => {
   }
 
   return (
-    <div>
-      <h2>Login to continue to iNoteBook</h2>
+    <>
+    
+    {
+      loading ? <Loading/> :
+    <div className='container py-2 border border-1 rounded-1'>
+      <h2 className='text-center'>Login to continue to iNoteBook</h2>
       <form onSubmit={handleSubmit}>
 
         <div className="mb-3">
@@ -59,6 +67,8 @@ const Login = (props) => {
         <button type="submit" className="btn btn-primary" >Submit</button>
       </form>
     </div>
+  }
+    </>
   )
 }
 
