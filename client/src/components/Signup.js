@@ -78,7 +78,7 @@ const Signup = (props) => {
 
         <button type="submit" className="btn btn-warning">Submit</button>
         </div>
-        <div className="col">
+        <div className="col my-auto">
           <img src="/images/login.gif" className='img-fluid' alt="login" />
         </div>
         </div>
