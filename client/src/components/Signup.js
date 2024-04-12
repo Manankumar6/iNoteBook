@@ -49,9 +49,14 @@ const Signup = (props) => {
 
 
   return (
-    <div className='container py-2 border border-1 rounded-1'>
-         <h2 className='text-center '>Signup to continue iNoteBook</h2>
+    <div className='container py-2  rounded-1'>
+         <h2 className='text-center  ' style={{color:"#fbbc04"}}>Signup To Continue iNoteBook</h2>
       <form onSubmit={handleSubmit}>
+        <div className="row">
+
+        <div className="col my-auto">
+
+      
         <div className="mb-3">
           <label htmlFor="name" className="form-label">User Name</label>
           <input type="text" className="form-control" name='name' id="name" value={signup.user} onChange={onChange} aria-describedby="emailHelp" />
@@ -71,7 +76,12 @@ const Signup = (props) => {
           <input type="password" className="form-control" name='cpassword' id="cpassword" value={signup.cpassword} onChange={onChange} required minLength={5}/>
         </div>
 
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-warning">Submit</button>
+        </div>
+        <div className="col">
+          <img src="/images/login.gif" className='img-fluid' alt="login" />
+        </div>
+        </div>
       </form>
     </div>
   )

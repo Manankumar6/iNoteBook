@@ -24,6 +24,7 @@ const Login = (props) => {
 
     });
     const json = await response.json()
+    console.log(json,"login json")
 
     if (json.success) {
       setLoading(false)
@@ -50,10 +51,12 @@ const Login = (props) => {
     
     {
       loading ? <Loading/> :
-    <div className='container py-2 border border-1 rounded-1'>
-      <h2 className='text-center'>Login to continue to iNoteBook</h2>
+    <div className='container py-2  rounded-1'>
+      <h2 className='text-center'  style={{color:"#fbbc04"}}>Login To Continue To iNoteBook</h2>
       <form onSubmit={handleSubmit}>
 
+          <div className="row">
+            <div className="col  my-auto">
         <div className="mb-3">
           <label htmlFor="email" className="form-label">Email address</label>
           <input type="email" className="form-control" id="email" value={login.email} onChange={onChange} name='email' aria-describedby="emailHelp" />
@@ -64,7 +67,12 @@ const Login = (props) => {
           <input type="password" className="form-control" id="password" value={login.password} onChange={onChange} name='password' />
         </div>
 
-        <button type="submit" className="btn btn-primary" >Submit</button>
+        <button type="submit" className="btn btn-warning" >Submit</button>
+        </div>
+        <div className="col">
+          <img src="/images/login.gif" className='img-fluid' alt="login" />
+        </div>
+        </div>
       </form>
     </div>
   }

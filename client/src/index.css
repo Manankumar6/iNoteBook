@@ -33,9 +33,10 @@ i {
 
 .nav-item-icon {
 
-    width: 2.4rem;
-    height: 2.4rem;
-    padding: 5px;
+    width: 35px;
+    height: 35px;
+    padding: 2%;
+    min-width: 20px;
 
 }
 
@@ -44,20 +45,20 @@ i {
     cursor: pointer;
 }
 
-.sidebar {
+/* .sidebar {
     width: 22%;
     height: 20%;
     
 
-}
+} */
 
 .li-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 28px;
+    height: 28px;
     font-size: 1rem;
     
     padding: 2px;
@@ -70,15 +71,16 @@ i {
 ul>li {
     width: 100%;
     height: 50px;
-
     display: flex;
     align-items: center;
+    padding: 0 8px;
+
    
 }
 span{
  
     font-size: 1rem;
-    padding-left: 2rem;
+    padding-left: 1.2rem;
 }
 ul>li:hover {
     background-color: #feefc3;
@@ -90,7 +92,7 @@ ul>li:hover {
 }
 .input_holder{
     width: 50%;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 2px 5px gray;
     
 }
 .container > .form-control::-webkit-input-placeholder {

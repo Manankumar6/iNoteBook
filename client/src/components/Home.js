@@ -12,7 +12,7 @@ const Home = (props) => {
   const { showAlert } = props
   return (
     <div className=' d-flex'>
-      <div className=" sidebar " >
+      <div className=" sidebar  " >
         <ul className='m-0 px-2 ' >
           <li ><FaRegLightbulb className='li-icon'/><span> Notes</span></li> 
           <li><FaRegBell className='li-icon'/>  <span> Reminders</span></li>

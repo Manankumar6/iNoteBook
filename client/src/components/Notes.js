@@ -17,7 +17,7 @@ const Notes = (props) => {
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getNotes();
-        
+
         } else {
             navigate('/login')
         }
@@ -104,7 +104,10 @@ const Notes = (props) => {
 
             {/* Your Note-------------------------------------------------------- */}
             <div className='row my-3'>
-                <h1>Your Note</h1>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Hello!</strong> Be confident in the security of your notes,  our robust system prioritizes their protection and confidentiality.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
                 <div className='container mx-2'>
                     {notes.length === 0 && "No Notes to display"}
                 </div>

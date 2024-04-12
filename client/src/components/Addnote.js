@@ -3,6 +3,7 @@ import noteContext from '../context/notes/noteContext'
 
 const Addnote = (props) => {
   const context = useContext(noteContext)
+  const [showInputs, setShowInputs] = useState(false);
   const { addNote } = context
   const [note, setNote] = useState({
     title: "",
@@ -15,7 +16,7 @@ const Addnote = (props) => {
     setNote({
       title: "",
       description: "",
-      tag: ""
+      tag: "Default"
     })
     props.showAlert("Added Successfullt", "success")
   }
@@ -25,22 +26,34 @@ const Addnote = (props) => {
     setNote({ ...note, [name]: value })
   }
 
-
-
+  const showInput = () => {
+    setShowInputs(true); // Update setShowInputs instead of setShowInt
+  };
   return (
     <div className='container'>
-      <h1 className='text-center'>Add A Note</h1>
+      {/* <h1 className='text-center'>Add Your Note Privately</h1> */}
       <form >
-        <div className="container py-2">
-          <div className='input_holder p-2 mx-auto rounded-1'>
+        <div className="container py-2 mt-3">
+          <div className='input_holder p-1 mx-auto rounded-1'>
 
-            <input type="text" placeholder='Take a note...' className='border border-0 my-1 py-2  form-control  ' id='title' name='title' onChange={onChange} minLength={5} required value={note.title} />
-            <input type="text" placeholder='description' className='border border-0 my-1 py-2  form-control' id="description" name='description' onChange={onChange} minLength={5} required value={note.description} />
-          </div>
-          <div className="mx-sm-auto w-50 my-1">
+            <input type="text" placeholder='Take a note...' className='border border-0 my-1 py-2  form-control  ' id='title' name='title' onChange={onChange} minLength={5} required value={note.title} onClick={showInput} />
+   
+            {
+              showInputs &&
+           
+              <>
+                <input type="text" placeholder='description' className='border border-0 my-1 py-2  form-control' id="description" name='description' onChange={onChange} minLength={5} required value={note.description} />
+                <input type="text" className="border border-0 my-1 py-2 form-control" id="tag" name='tag' onChange={onChange} minLength={5} required placeholder='tag' value={note.tag} />
+              </>
+              }
+              </div>
+            <div className="mx-sm-auto w-50 my-2">
 
-          <button disabled={note.title.length < 5 || note.description.length < 5} type="submit" className="btn btn-primary mx-auto" onClick={handleClick}>Add Note</button>
-          </div>
+              <button disabled={note.title.length < 5 || note.description.length < 5} type="submit" className="btn btn-primary mx-auto" onClick={handleClick}>Add Note</button>
+            </div>
+        
+    
+       
         </div>
       </form>
       {/* <form>
